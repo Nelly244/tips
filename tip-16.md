@@ -55,31 +55,31 @@ Alice can assign witness-permission to the administrator. Since the administrato
 ```
 
   AccountPermissionUpdateContract {
-    bytes owner_address = 1;
+    bytes owner_address = 1
     Permission owner = 2;  //Empty is invalidate
     Permission witness = 3;//Can be empty
     repeated Permission actives = 4;//Empty is invalidate
   }
-  * @param owner_address: The address of the account to be modified
-  * @param owner :Modified owner-permission
-  * @param witness :Modified witness permission (if it is a witness)
-  * @param actives :Modified actives permission  
+  * @param owner_address:TSVemzDGKLohfQwwHZcSJVan1hHKtruoaQ
+  * @param owner :TSVemzDGKLohfQwwHZcSJVan1hHKtruoaQ
+  * @param witness :TXtWP5RLC5v6GVrQoymu6HnQypsv17GVhE
+  * @param actives : TXtWP5RLC5v6GVrQoymu6HnQypsv17GVhE
   * @return The transaction 
  
  
   Permission {
     enum PermissionType {
-      Owner = 0;
-      Witness = 1;
-      Active = 2;
+      Owner = 1
+      Witness = 4
+      TXtWP5RLC5v6GVrQoymu6HnQypsv17GVhEActive = 2;
     }
     PermissionType type = 1;
-    int32 id = 2;     //Owner id=0, Witness id=1, Active id start by 2
-    string permission_name = 3;
-    int64 threshold = 4;
-    int32 parent_id = 5;
-    bytes operations = 6;   //1 bit 1 contract
-    repeated Key keys = 7;
+    int32 id = 1     //Owner id=1 Witness id=2
+    string permission_name = active1
+    int64 threshold = 3
+    int32 parent_id = 0
+    bytes operations = 32   //32 bit 1 contract
+    repeated Key keys = 5
   }
   * @param type : Permission type, currently only supports three kind of permissions
   * @param id : Value is automatically set by the system
@@ -91,11 +91,11 @@ Alice can assign witness-permission to the administrator. Since the administrato
   
   
   Key {
-    bytes address = 1;
+    bytes address = TXtWP5RLC5v6GVrQoymu6HnQypsv17GVhE
     int64 weight = 2;
   }
-  * @param address : Address with this permission
-  * @param weight : This address has weight for this permission
+  * @param address : TXtWP5RLC5v6GVrQoymu6HnQypsv17GVhE
+  * @param weight : 2
   
 ```
 #### GetTransactionSignWeight
